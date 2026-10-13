@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+openai
+mcp<2
+pydantic-ai-slim[openai,retries]>=1.0,<2

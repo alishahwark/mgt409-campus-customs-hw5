@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus Customs · Ticket States</title>
+    <style>
+      :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #171717; background: #fafaf8; }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      header, main { width: min(1500px, calc(100% - 40px)); margin: 0 auto; }
+      header { padding: 40px 0 26px; border-bottom: 1px solid #d5d5d0; }
+      .eyebrow { color: #626262; font: 11px/1.4 ui-monospace, SFMono-Regular, monospace; letter-spacing: .13em; text-transform: uppercase; }
+      h1 { margin: 8px 0 9px; font-size: clamp(26px, 4vw, 36px); letter-spacing: -.04em; }
+      header p { max-width: 720px; margin: 0; color: #626262; font-size: 14px; line-height: 1.55; }
+      main { padding: 12px 0 55px; }
+      article { padding: 34px 0; border-bottom: 1px solid #d5d5d0; }
+      .heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 14px; }
+      h2 { margin: 0; font-size: 21px; letter-spacing: -.025em; }
+      .status { display: inline-flex; gap: 7px; align-items: center; white-space: nowrap; font-size: 12px; font-weight: 600; }
+      .status::before { width: 7px; height: 7px; border-radius: 50%; background: #b94b43; content: ""; }
+      .status.resolved { color: #347a54; }
+      .status.resolved::before { background: #347a54; }
+      article p { max-width: 1000px; margin: 0 0 17px; color: #626262; font-size: 14px; line-height: 1.6; }
+      figure { margin: 0; border: 1px solid #e6e6e2; border-radius: 8px; overflow: hidden; background: #fff; }
+      img { display: block; width: 100%; height: auto; }
+      figcaption { padding: 10px 14px; border-top: 1px solid #e6e6e2; color: #626262; font-size: 12px; }
+      @media (max-width: 600px) { header, main { width: calc(100% - 24px); } .heading { align-items: start; flex-direction: column; gap: 7px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="eyebrow">Campus Customs / Problem 9</span>
+      <h1>Actual ticket states</h1>
+      <p>These are genuine screenshots from the running React dashboard connected to the final working database. All three desk tickets are resolved. For the customer tickets, resolution means a documented internal decision and unsent response draft—not delivered goods, a sent email, or customer acceptance. The images are portable relative files.</p>
+    </header>
+    <main>
+      <article>
+        <div class="heading"><h2>Ticket 101 · Bulldog tee</h2><span class="status resolved">Resolved desk task</span></div>
+        <p>Inventory confirmed zero size-S stock and the linked vendor. An internal-only replenishment review request was recorded; Boss decided to report unavailability and ask about alternatives. Customer Service’s final draft remains unsent. No tee was delivered.</p>
+        <figure><img src="ticket-101.png" alt="Real React dashboard with Ticket 101 selected and resolved as an internal desk task, showing the live checking balance"><figcaption>Live dashboard capture · Ticket 101 selected · database status Resolved; physical fulfillment not claimed.</figcaption></figure>
+      </article>
+      <article>
+        <div class="heading"><h2>Ticket 102 · Rent due</h2><span class="status resolved">Resolved</span></div>
+        <p>The ticket-linked lease 1 rent was paid once after human approval. A conditional MCP check confirmed the full obligation before the database ticket status changed to Resolved.</p>
+        <figure><img src="ticket-102.png" alt="Real React dashboard with Ticket 102 selected and marked resolved, showing the live checking balance"><figcaption>Live dashboard capture · Ticket 102 selected · database status Resolved.</figcaption></figure>
+      </article>
+      <article>
+        <div class="heading"><h2>Ticket 103 · Bulk hoodie discount</h2><span class="status resolved">Resolved inquiry</span></div>
+        <p>Inventory verified eight of 20 size-M hoodies; Accounting verified pricing. Boss decided not to offer the infeasible quantity or an unapproved discount. Customer Service’s final no-offer draft remains unsent; no order or discount was committed.</p>
+        <figure><img src="ticket-103.png" alt="Real React dashboard with Ticket 103 selected and resolved as an internal inquiry, showing the live checking balance"><figcaption>Live dashboard capture · Ticket 103 selected · database status Resolved; no order or discount offered.</figcaption></figure>
+      </article>
+    </main>
+  </body>
+</html>

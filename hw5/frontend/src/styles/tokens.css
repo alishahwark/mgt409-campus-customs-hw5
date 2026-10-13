@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #171717;
+  background: #fafaf8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bg: #fafaf8;
+  --bg-secondary: #f2f2ef;
+  --surface: #fff;
+  --text: #171717;
+  --text-secondary: #626262;
+  --text-tertiary: #6b6b6b;
+  --text-light: #969696;
+  --border: #e6e6e2;
+  --divider: #d5d5d0;
+  --accent: #ff5a36;
+  --accent-hover: #e84a28;
+  --accent-text: #a8381f;
+  --success: #347a54;
+  --warning: #9b631c;
+  --error: #b94b43;
+  --info: #456f91;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+}

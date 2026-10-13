@@ -1,0 +1,117 @@
+[
+  {
+    "ticket_id": 101,
+    "description": "Needs a tee in size S.",
+    "final_status": "resolved",
+    "agent_run_status": "completed",
+    "outcome": "The internal desk request was resolved as unavailable after a verified one-unit shortage, paid invoice 501, linked Bulldog Print Co vendor and five-day reference lead time, one internal-only replenishment review request, a final Boss decision, and a complete unsent Customer Service draft asking about alternatives. No purchase, vendor acceptance, physical fulfillment, or customer contact occurred.",
+    "agents": [
+      {"name": "boss", "contribution": "Coordinated specialists and made the final internal unavailability/alternative-request decision after the review request was recorded."},
+      {"name": "inventory", "contribution": "Verified zero size-S stock, a one-unit shortage, the paid-invoice vendor link, five-day reference lead time, and the need for an internal sourcing review."},
+      {"name": "accounting", "contribution": "Verified open invoice 501, $3,400.00 starting cash, and affordability of the $840.00 payment."},
+      {"name": "customer_service", "contribution": "Prepared a final unsent draft disclosing size-S unavailability and asking about alternatives without promising delivery."}
+    ],
+    "delegations": [
+      "Boss → Inventory: initial stock and vendor check",
+      "Boss → Accounting: invoice 501 and cash check",
+      "Accounting → Inventory: vendor restriction and shipment relevance",
+      "Boss → Inventory: post-payment stock and vendor recheck",
+      "Boss → Customer Service: unsent customer response draft",
+      "Latest run, Boss → Inventory: paid-invoice vendor and shortage recheck",
+      "Latest run, Inventory → Accounting: invoice, cash, and payment-history verification",
+      "Latest run, Boss → Customer Service: unsent out-of-stock and alternative-request draft",
+      "Operational review run, Boss → Inventory: verified sourcing facts",
+      "Operational review run, Boss → Customer Service: final unsent draft",
+      "Final run, Boss → Inventory: reverified the recorded internal review request",
+      "Final run, Boss → Customer Service: complete no-commitment draft"
+    ],
+    "mcp_tools_used": [
+      "get_open_tickets", "get_ticket_details", "check_inventory_and_vendor",
+      "get_vendor_details", "get_product_pricing", "check_cash_and_invoices",
+      "get_cash_position", "get_payment_history", "get_shop_date",
+      "execute_approved_payment", "assess_ticket_resolution",
+      "record_replenishment_review_request", "close_operational_ticket"
+    ],
+    "operational_resolution": {"decision": "unavailable_request_alternative", "replenishment_review_request_id": 1, "replenishment_status": "internal_review_only", "communication_status": "unsent_draft", "fulfillment_status": "not_fulfilled", "stock_at_decision": 0, "shortage_at_decision": 1},
+    "human_approvals": [
+      {"approval_id": "approval-1653327d061a4e3cb5f5f0d051ef2962", "decision": "rejected", "purpose": "duplicate invoice 501 proposal", "amount": "840.00", "human_actor": "Ali Shahwar Kichloo", "database_changed": false},
+      {"approval_id": "approval-8adc4751dd1944358de7971cee9dd49a", "decision": "approved and executed", "purpose": "pay Bulldog Print Co invoice 501", "amount": "840.00", "human_actor": "Ali Shahwar Kichloo", "database_changed": true}
+    ],
+    "payments_purchases": [
+      {"payment_id": 1, "kind": "invoice", "reference_id": 501, "amount": "840.00", "paid_at": "2026-08-31", "approved_by": "Ali Shahwar Kichloo"}
+    ],
+    "checking_before": "3400.00",
+    "cash_change": "-840.00",
+    "checking_after": "2560.00"
+  },
+  {
+    "ticket_id": 102,
+    "description": "Email: shop rent due in 2 days.",
+    "final_status": "resolved",
+    "agent_run_status": "completed",
+    "outcome": "The ticket-linked Elm City Properties lease 1 rent was verified due 2026-09-02, exactly two days after desk.date_today 2026-08-31. One human-approved $2,400.00 rent payment fully covered the obligation. A verified MCP condition then changed the ticket status to resolved.",
+    "agents": [
+      {"name": "boss", "contribution": "Coordinated lease and cash checks and verified completion after payment."},
+      {"name": "facilities", "contribution": "Verified the declared lease, landlord, $2,400.00 rent, due date, and shop-date comparison."},
+      {"name": "accounting", "contribution": "Verified no prior rent payment, $2,560.00 available cash, and affordability before approval."}
+    ],
+    "delegations": [
+      "Boss → Facilities: lease and shop-date check",
+      "Boss → Accounting: cash and lease payment-history check"
+    ],
+    "mcp_tools_used": [
+      "get_open_tickets", "get_ticket_details", "check_lease_and_rent",
+      "get_shop_date", "get_cash_position", "get_payment_history",
+      "execute_approved_payment", "resolve_paid_rent_ticket"
+    ],
+    "human_approvals": [
+      {"approval_id": "approval-482655535b124feb827cb1fa2cf33f7d", "decision": "approved and executed after lease/date verification", "purpose": "pay Elm City Properties lease 1 rent", "amount": "2400.00", "human_actor": "Ali Shahwar Kichloo", "database_changed": true}
+    ],
+    "payments_purchases": [
+      {"payment_id": 2, "kind": "rent", "reference_id": 1, "amount": "2400.00", "paid_at": "2026-08-31", "approved_by": "Ali Shahwar Kichloo"}
+    ],
+    "checking_before": "2560.00",
+    "cash_change": "-2400.00",
+    "checking_after": "160.00"
+  },
+  {
+    "ticket_id": 103,
+    "description": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+    "final_status": "resolved",
+    "agent_run_status": "completed",
+    "outcome": "The price-override inquiry was resolved by a documented Boss decision not to offer the infeasible 20-unit quantity or an unapproved bulk discount. Inventory verified 8 in stock and 12 missing with no supplier; Accounting verified $58 list price and $22 unit cost. Customer Service prepared a final unsent draft disclosing that decision. No offer, purchase, fulfillment, payment, or customer contact occurred.",
+    "agents": [
+      {"name": "boss", "contribution": "Coordinated Inventory, Accounting, and Customer Service and made a final no-offer internal decision based on verified constraints."},
+      {"name": "inventory", "contribution": "Verified eight in stock, a 12-unit shortage, and no matching vendor or lead time."},
+      {"name": "accounting", "contribution": "Verified $58.00 list price, $22.00 unit cost, derived $36.00 gross margin per unit, $160.00 cash, and no defensible specific discount."},
+      {"name": "customer_service", "contribution": "Prepared a final unsent draft stating eight available, the full 20 unavailable, and no bulk discount offered now; no delivery promise."}
+    ],
+    "delegations": [
+      "Boss → Inventory: first stock and vendor check",
+      "Boss → Accounting: first pricing/cash check, failed at output-token cap",
+      "Boss → Accounting: another first-run pricing/cash request",
+      "Boss → Customer Service: first-run draft request",
+      "Boss → Inventory: clean retry stock and vendor check",
+      "Boss → Accounting: clean retry pricing and cash check",
+      "Boss → Customer Service: clean retry unsent draft",
+      "Latest run, Boss → Inventory: stock and supplier verification",
+      "Latest run, Boss → Accounting: pricing, cost, margin, and cash verification",
+      "Latest run, Boss → Customer Service: unsent holding response",
+      "Latest run, Customer Service → Accounting: discount-authorization evidence check",
+      "Final run, Boss → Inventory: verify current stock and sourcing",
+      "Final run, Boss → Accounting: verify price, cost, and discount constraints",
+      "Final run, Boss → Customer Service: draft the final no-offer response"
+    ],
+    "mcp_tools_used": [
+      "get_open_tickets", "get_ticket_details", "check_inventory_and_vendor",
+      "get_vendor_details", "get_product_pricing", "get_cash_position",
+      "get_shop_date", "assess_ticket_resolution", "close_operational_ticket"
+    ],
+    "operational_resolution": {"decision": "decline_unfulfillable_bulk_request", "communication_status": "unsent_draft", "fulfillment_status": "not_fulfilled", "stock_at_decision": 8, "shortage_at_decision": 12, "discount_offered": false},
+    "human_approvals": [],
+    "payments_purchases": [],
+    "checking_before": "160.00",
+    "cash_change": "0.00",
+    "checking_after": "160.00"
+  }
+]
